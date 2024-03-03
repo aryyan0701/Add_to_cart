@@ -1,0 +1,65 @@
+<p-messages></p-messages>
+
+<div class="card" *ngIf="!isCartEmpty">
+    <p-table [value]="cartService.getItems()" [tableStyle]="{'min-width': '60rem'}">
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          Your Cart
+          <p-button icon="pi pi-refresh" ></p-button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Remove</th>  
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item>
+        <tr>
+          <td><img [src]="item.img" [alt]="item.name" width="100" class="shadow-4" /></td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price | currency:'INR' }}</td>
+          <td>
+            <button pButton icon="pi pi-minus" (click)="cartService.decrementQuantity(item.id)" class="mr-3"></button>
+          
+           <p-button [label]="item.quantity " [raised]="true" class="mr-3"></p-button>
+         
+        
+            <button pButton icon="pi pi-plus" (click)="cartService.incrementQuantity(item.id)"></button>
+          </td>
+          <td>
+            <button pButton icon="pi pi-trash" (click)="deleteFromcart(item)" class="p-button-danger"></button>
+          </td>
+        </tr>
+      </ng-template>
+      
+      <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+          Sub Total: {{ calculateTotal() | currency:'INR' }}
+          
+          <p-button label="Checkout" icon="pi pi-check" iconPos="right"></p-button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+  
+  <div *ngIf="isCartEmpty" class="card flex justify-content-center">   
+    <p-card [style]="{ 'width': '550px', 'margin': '20px' }">
+      <div class="container flex justify-content-center align-items-center" style="padding: 20px">
+        <h1>Your cart is empty right now</h1>
+        <p-button label="Shopping" icon="pi pi-shopping-bag" iconPos="right" (click)="navigateToProductList()"></p-button>
+      </div>       
+    </p-card>
+  </div>
+
+  
+<div class="card">
+    <p-timeline [value]="events">
+        <ng-template pTemplate="content" let-event>
+            {{ event.status }}   
+        </ng-template>
+    </p-timeline>
+</div>

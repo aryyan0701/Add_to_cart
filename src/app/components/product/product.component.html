@@ -1,0 +1,38 @@
+<div class="card" [style]="{ 'width': '1500px', 'margin-bottom': 'auto'}">
+    <p-toolbar>
+        <div class="p-toolbar-group-start">
+            <button pButton icon="pi pi-bars" class="mr-2"></button>
+        </div>
+        
+        <h2 class="flex justify-content-center align-items-center gap-4px">welcome to our platform</h2>
+        
+        <div class="p-toolbar-group-center">
+            <span class="p-input-icon-right">
+                <i class="pi pi-search"></i>
+                <input pInputText placeholder="Search" />
+            </span>
+        </div>
+        
+        <div class="p-toolbar-group-end">
+            <button pButton icon="pi pi-user" class="mr-2"></button>
+            <button pButton icon="pi pi-cart-plus" class="mr-2" (click)="navigateToCart()"></button>
+            <p-splitButton label="Save" icon="pi pi-check"></p-splitButton>
+        </div>
+    </p-toolbar>
+</div>
+
+<div class="container flex justify-content-start align-items-center gap-4px ">
+    <div class="card flex justify-content-center" *ngFor="let product of Products" [style]="{ 'width': '360px', 'margin': '20px' }">
+        <p-card [header]="product.name" [subheader]="product.tagline" [style]="{ width: '360px'}">
+            <ng-template pTemplate="header">
+                <img alt="Card" [src]="product.img" [style]="{ 'width': '360px', 'height': '230px'}" />
+            </ng-template>
+            <strong severity="success">{{ product.price }}₹</strong>
+            <p>{{ product.dec }}</p>
+            <ng-template pTemplate="footer">
+                <p-button label="Buy Now"></p-button>
+                <p-button label="Add to Cart" icon="pi pi-cart-plus" styleClass="p-button-secondary" (click)="addToCart(product)" [style]="{ 'margin-left': '.5em' }"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

@@ -1,26 +1,66 @@
-# MyCart
+# Angular E-Commerce(add to cart) Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+This is an Angular-based small scale e-commerce project aimed at providing users with an interactive and seamless shopping experience. Users can browse through a variety of products, add them to their cart, and manage their cart items effectively. The project utilizes PrimeNG library for UI components.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Product Listing:** Browse through a wide range of products displayed with detailed information.
+- **Add to Cart:** Easily add products to the cart with a single click.
+- **Cart Management:** Manage your cart items by adding, removing, or updating quantities.
+- **Subtotal Calculation:** The subtotal of each product updates dynamically based on the quantity selected.
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular:** A platform and framework for building single-page client applications.
+- **PrimeNG:** A collection of rich UI components for Angular applications.
+- **HTML/CSS:** Standard markup and styling languages for building web interfaces.
+- **Typescript:** used to build a logical part of this project.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get a local copy up and running follow these simple steps:
 
-## Running unit tests
+1. Clone the repository:
+   ```
+   git clone https://github.com/your_username/your_project_name.git
+   ```
+2. Navigate into the project directory:
+   ```
+   cd your_project_name
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm run start
+   ```
+5. Open your browser and visit `http://localhost:4200` to view the application.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+- Browse through the available products on the home page.
+- Click on a product to view detailed information and options.
+- Add products to your cart by clicking the "Add to Cart" button.
+- Navigate to the cart page to manage your cart items.
+- Update the quantity of each product as desired and observe the subtotal change accordingly.
+- Remove items from the cart if needed.
+- Proceed to checkout when ready to make a purchase.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributors
+
+- [Aryn Kadam](https://github.com/aryyan0701) - Project Lead & Developer
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- PrimeNG library for providing powerful UI components.
+- Angular community for continuous support and updates.
+
 
 ## Further help
 
